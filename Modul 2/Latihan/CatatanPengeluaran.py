@@ -1,4 +1,4 @@
-expenses = [
+expenses_real = [
     {'tanggal': '2023-07-25', 'deskripsi': 'Makan Siang', 'jumlah': 50000},
     {'tanggal': '2023-07-25', 'deskripsi': 'Transportasi', 'jumlah': 25000},
     {'tanggal': '2023-07-26', 'deskripsi': 'Belanja', 'jumlah': 100000},
@@ -54,8 +54,8 @@ def display_menu():
 # TODO 6 ubah fungsi berikut ke dalam bentuk lambda
 get_user_input = lambda command: int(input(command))
 
-def main():
-    global expenses
+def main(expenses_real):
+    expenses = expenses_real.copy()
     while True:
         display_menu()
         choice = get_user_input("Pilih menu (1/2/3/4/5): ")
@@ -74,9 +74,10 @@ def main():
             view_expenses_report(expenses)
         elif choice == 5:
             print("Terima kasih telah menggunakan aplikasi kami.")
+            print(expenses_real)
             break
         else:
             print("Pilihan tidak valid. Silahkan pilih menu yang benar.")
 
 if __name__ == "__main__":
-    main()
+    main(expenses_real)
