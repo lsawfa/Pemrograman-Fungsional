@@ -43,10 +43,6 @@ def play_game(width, height, setup_board, display_board, check_game_result, crea
             else:
                 print("Failed to generate positions. Please try again.")
         
-        if max_attempts <= 0:
-            print("Failed to generate positions three times. Exiting the game.")
-            break
-
         while True:
             moves = input("Enter your moves (WASD): ").lower()
 
