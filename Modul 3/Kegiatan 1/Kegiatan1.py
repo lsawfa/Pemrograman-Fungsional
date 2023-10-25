@@ -2,6 +2,7 @@ data = ["3 minggu 3 hari 7 jam 21 menit",
         "5 minggu 5 hari 8 jam 11 menit",
         "7 minggu 1 hari 5 jam 33 menit"]
 
+#Fungsi dengan inputan weeks, days, hours, dan minutes untuk convert data ke menit dengan output minutes
 def convert_week(weeks):
     def convert_day(days):
         def convert_hour(hours):
@@ -11,6 +12,7 @@ def convert_week(weeks):
         return convert_hour
     return convert_day
 
+#Fungsi dengan inputan item data untuk split list data sehingga didapatkan output weeks, days, hours, dan minutes
 def process_item(item):
     parts = item.split()
     weeks = int(parts[0])
