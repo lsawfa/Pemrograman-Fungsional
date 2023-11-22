@@ -48,7 +48,7 @@ def main(user_input, trans, rot, dil, eq):
     result_equation = transformed_line_equation(x_input, y_input)
 
     print(f"Persamaan garis yang melalui titik ({x_input},{y_input}) dan bergradien {gradien_awal:.2f}:")
-    print(line_equation(x_input, y_input, gradien_awal))
+    print(eq(x_input, y_input, gradien_awal))
     print("Persamaan garis baru setelah transformasi:")
     print(result_equation)
 
