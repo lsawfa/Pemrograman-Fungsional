@@ -38,12 +38,12 @@ def get_user_input():
         float(input("Masukkan nilai skala pada sumbu y: "))
     )
 
-def main(user_input, trans, rot, dil):
+def main(user_input, trans, rot, dil, eq):
     x_input, y_input, gradien_awal, tx_input, ty_input, sudut_rotasi, sx_input, sy_input = user_input()
     
     @transformasi_decorator(trans(tx_input, ty_input), rot(sudut_rotasi), dil(sx_input, sy_input))
     def transformed_line_equation(x, y):
-        return line_equation(x, y, gradien_awal)
+        return eq(x, y, gradien_awal)
 
     result_equation = transformed_line_equation(x_input, y_input)
 
@@ -53,4 +53,4 @@ def main(user_input, trans, rot, dil):
     print(result_equation)
 
 if __name__ == "__main__":
-    main(get_user_input, translasi, rotasi, dilatasi)
+    main(get_user_input, translasi, rotasi, dilatasi, line_equation)
